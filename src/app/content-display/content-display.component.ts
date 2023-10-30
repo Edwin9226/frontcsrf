@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { HttpClientService } from '../http-client.service';
 
 import { Content } from '../content';
 @Component({
@@ -16,11 +16,11 @@ export class ContentDisplayComponent {
   title = 'Hello';
   messages: string[] = [];
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClientService) {}
 
   ngOnInit(): void {
     this.http
-      .get<Content[]>('http://localhost:4000/messages')
+      .get('/messages')
       .subscribe(
         (data: Content[]) =>
           (this.messages = data.map((content) => content.message))

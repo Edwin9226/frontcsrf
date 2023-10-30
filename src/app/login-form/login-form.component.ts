@@ -7,7 +7,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
-import { HttpClient } from '@angular/common/http';
+import { HttpClientService } from '../http-client.service';
 @Component({
   selector: 'app-login-form',
   templateUrl: './login-form.component.html',
@@ -27,10 +27,10 @@ export class LoginFormComponent {
   @ViewChild('loginForm') loginForm!: NgForm;
   @Output() onLoginEvent = new EventEmitter();
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClientService) {}
   onSubmit(): void {
     this.http
-      .post('http://localhost:4000/signIn', this.loginForm.value)
+      .post('/signIn', this.loginForm.value, { withCredentials: true })
       .subscribe((data: any) => this.onLoginEvent.emit());
   }
 }
