@@ -8,6 +8,8 @@ import { HeaderComponent } from './header/header.component';
 import { ContentDisplayComponent } from './content-display/content-display.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { ContentInputComponent } from './content-input/content-input.component';
+import { AppRoutingModule } from './app-routing.module';
+import { ToolbarComponent } from './components/toolbar/toolbar.component';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent],
@@ -18,6 +20,8 @@ import { ContentInputComponent } from './content-input/content-input.component';
     HttpClientModule,
     LoginFormComponent,
     ContentInputComponent,
+    AppRoutingModule,
+    ToolbarComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],

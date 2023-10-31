@@ -1,7 +1,9 @@
+<app-toolbar></app-toolbar>
+<div class="main-container">
+  <router-outlet></router-outlet>
+</div>
 <div>
-  <app-header />
-
-  <div class="main">
+  <div>
     <app-login-form
       (onLoginEvent)="onSignedIn()"
       *ngIf="authenticated == false"
