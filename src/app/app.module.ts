@@ -10,13 +10,14 @@ import { LoginFormComponent } from './login-form/login-form.component';
 import { ContentInputComponent } from './content-input/content-input.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, ContentInputComponent],
+  declarations: [AppComponent, HeaderComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     ContentDisplayComponent,
     HttpClientModule,
     LoginFormComponent,
+    ContentInputComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],

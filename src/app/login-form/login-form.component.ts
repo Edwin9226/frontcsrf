@@ -29,6 +29,8 @@ export class LoginFormComponent {
 
   constructor(private http: HttpClientService) {}
   onSubmit(): void {
+    debugger;
+    console.log(this.loginForm.value);
     this.http
       .post('/signIn', this.loginForm.value, { withCredentials: true })
       .subscribe((data: any) => this.onLoginEvent.emit());
